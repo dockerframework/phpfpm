@@ -1,4 +1,4 @@
-ARG PHP_VERSION=5.6.35
+ARG PHP_VERSION=7.0.30
 ARG ALPINE_VERSION=3.4
 FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
 
@@ -23,9 +23,9 @@ FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
-ENV PHP_VERSION=5.6.35 \
+ENV PHP_VERSION=7.0.30 \
     ALPINE_VERSION=3.4 \
-    XDEBUG_VERSION=2.5.5
+    XDEBUG_VERSION=2.6.0
 
 COPY ./docker-php-pecl-install /usr/local/bin/
 RUN apk add --no-cache $PHPIZE_DEPS \
@@ -43,7 +43,7 @@ RUN apk add --no-cache $PHPIZE_DEPS \
 
 COPY docker-php-source /usr/local/bin/
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-RUN docker-php-ext-enable opcache
+RUN docker-php-ext-enable sodium
 
 RUN mkdir -p /var/log/php-fpm \
     && mkdir -p /var/www/html \
