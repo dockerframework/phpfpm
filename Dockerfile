@@ -25,7 +25,7 @@ MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
 ENV PHP_VERSION=5.6.35 \
     ALPINE_VERSION=3.4 \
-    XDEBUG_VERSION=2.6.0
+    XDEBUG_VERSION=2.5.5
 
 COPY ./docker-php-pecl-install /usr/local/bin/
 RUN apk add --no-cache $PHPIZE_DEPS \
