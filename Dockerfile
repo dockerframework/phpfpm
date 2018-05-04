@@ -43,7 +43,7 @@ RUN apk add --no-cache $PHPIZE_DEPS \
 
 COPY docker-php-source /usr/local/bin/
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-RUN docker-php-ext-enable sodium
+RUN docker-php-ext-enable opcache
 
 RUN mkdir -p /var/log/php-fpm \
     && mkdir -p /var/www/html \
