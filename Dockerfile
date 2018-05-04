@@ -1,6 +1,6 @@
 ARG PHP_VERSION=7.2.5
 ARG ALPINE_VERSION=3.7
-FROM ${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
+FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
 
 # ================================================================================================
 #  Inspiration: Docker Framework (https://github.com/zeroc0d3/docker-framework)
