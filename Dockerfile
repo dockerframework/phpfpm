@@ -50,6 +50,8 @@ RUN mkdir -p /var/log/php-fpm \
     && touch /var/log/php-fpm/fpm-error.log \
     && chmod 777 /var/log/php-fpm/fpm-error.log
 
+COPY rootfs /
+
 ENTRYPOINT ["docker-php-entrypoint"]
 WORKDIR /var/www/html
 
