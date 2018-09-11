@@ -1,5 +1,5 @@
 ARG PHP_VERSION=7.2.5
-ARG ALPINE_VERSION=3.7
+ARG ALPINE_VERSION=3.8
 FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
 
 # ================================================================================================
@@ -24,7 +24,7 @@ FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION}
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
 ENV PHP_VERSION=7.2.5 \
-    ALPINE_VERSION=3.7 \
+    ALPINE_VERSION=3.8 \
     XDEBUG_VERSION=2.6.0
 
 COPY ./docker-php-pecl-install /usr/local/bin/
